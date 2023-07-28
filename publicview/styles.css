@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    width: 95%;
+    width: 99%;
     max-width: 788px;
     display: flex;
     justify-content: flex-end;
@@ -80,8 +80,8 @@ a {
 
 
 .image-container {
-    height: 96px;
-    width: 96px;
+    height: 130px;
+    width: 130px;
     border-radius: 48px;
     overflow: hidden;
 }
