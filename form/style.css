@@ -79,7 +79,7 @@ span{
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 490px;
+    min-height: 98vh;
     height: fit-content;
     background-color: #fff;
     align-items: center;
