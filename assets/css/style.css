@@ -158,7 +158,7 @@ address {font-style: normal;}
 
 html {
   scroll-behavior: smooth;
-  font-family: kanit, sans-serif;
+  font-family: var(--ff-poppins);
   font-size: 10px;
 }
 
