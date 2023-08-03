@@ -6,13 +6,13 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     font-family: Verdana, Tahoma, sans-serif;
 }
 
 header {
-    width: 99%;
-    max-width: 788px;
+    width: 90vw;
+    max-width: 900x;
     display: flex;
     justify-content: flex-end;
     padding: 12px;
@@ -20,21 +20,24 @@ header {
 }
 
 .share-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
     background-color: rgb(240,240,240);
+    display: flex;
+    
+    ;
 }
 
 .share-button svg {
-    margin-left: 12px;
-    margin-top: 10px;
+    margin: auto;
     color: rgb(0,0,0);
+    
 }
 
 .container {
-    width: 98%;
-    max-width: 680px;
+    width: 95vw;
+    max-width: 900px;
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -42,7 +45,7 @@ header {
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 3rem;
     margin-bottom: 30px;
 }
 
@@ -54,10 +57,11 @@ a {
 .tile {
     width: 100%;
     background-color: rgb(37,37,37);
-    margin: 7px;
+    margin: 14px;
     border-radius: 17px;
     display: flex;
     justify-content: space-between;
+    font-size: 2rem;
 }
 
 .tile:hover {
@@ -66,23 +70,24 @@ a {
 }
 
 .tile-share-button {
-    margin: 8px;
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
     background-color: rgb(52,52,52);
+    display: flex;
 }
 
 .tile-share-button svg {
-    margin-left: 12px;
-    margin-top: 10px;
+    margin: 22px 30px;
+
 }
 
 
 .image-container {
-    height: 130px;
-    width: 130px;
-    border-radius: 48px;
+    height: 350px;
+    width: 350px;
+    border-radius: 150px;
     overflow: hidden;
 }
 
@@ -91,16 +96,37 @@ a {
 }
 
 .icon {
-    margin: 4px 8px;
-    width: 44px;
-    height: 44px;
+    margin: 20px 10px;
+    width: 80px;
+    height: 80px;
 }
 
-.bio.container {
+.bio-container {
     display: flex;
     margin-top: 0;
     margin-bottom: 30px;
 }
+
+.bio-container p {
+    font-size: 2rem;
+}
+
+.tile.cv {
+    width: 30%;
+    cursor: pointer;
+    justify-content: center;
+    background-color: rgb(251, 230, 192);
+    margin-block-end: 50px;
+}
+
+.tile.cv p{
+    margin: auto;
+    padding: 20px;
+    color: black;
+    
+}
+
+
 
 
 .preloader {
@@ -155,3 +181,5 @@ a {
     0% { width: 40%;}
     100% { width: 80%;}
 }
+
+

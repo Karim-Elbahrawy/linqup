@@ -104,15 +104,15 @@ form.sign-up-form {
 }
 
 .toggle {
-  color: #151111;
+  color: #ff7b00;
   text-decoration: none;
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 700;
   transition: 0.3s;
 }
 
 .toggle:hover {
-  color: #0858b5d3;
+  color: #1e1515d3;
 }
 
 .input-wrap {

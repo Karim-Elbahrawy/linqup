@@ -39,7 +39,7 @@
   --text-white: hsl(0, 0%, 100%);
   --text-gunmetal: hsl(0, 0%, 0%);
   --text-light-coral: hsl(0, 0%, 100%);
-  --text-granite-gray: hsl(210, 4%, 18%);
+  --text-granite-gray: hsl(0, 0%, 6%);
   --text-majorelle-blue: hsl(209, 53%, 36%);
   --text-sunglow: hsl(48, 100%, 50%);
   --text-black : hsl(0, 0%, 0%);
@@ -588,6 +588,36 @@ background-color: var(--bg-ocean-blue);}
 
 
 
+/*-----------------------------------*\
+  #GO GREEN
+\*-----------------------------------*/
+
+.go-green .container {
+  display: flex;
+  
+}
+
+.go-green-card {
+  padding: 25px 20px;
+
+  border-radius: var(--radius-20);
+  background-color: var(--bg-white);
+  box-shadow: var(--shadow-2);
+  margin-inline: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.go-green-card .card-title {
+  margin-block: 10px 5px;
+  color: green;
+}
+
+.go-green-card .card-text {font-size: var(--fontSize-7);}
+
+
 
 
 
@@ -634,8 +664,9 @@ background-color: var(--bg-ocean-blue);}
 }
 
 .desti-card .card-title {
-  margin-block: 40px 5px;
+  margin-block: 20px 5px;
   transition: var(--transition-1);
+  text-align: center;
 }
 
 .desti-card .card-title:is(:hover, :focus-visible) {color: var(--text-majorelle-blue);}
@@ -672,6 +703,7 @@ background-color: var(--bg-ocean-blue);}
   color: var(--text-black);
   font-size: var(--fontSize-3);
   margin: 10px 10px;
+  
 }
 
 
@@ -680,6 +712,7 @@ background-color: var(--bg-ocean-blue);}
   color: var(--text-granite-gray);
   font-size: var(--fontSize-7);
   margin-bottom: 40px;
+  text-align: center;
 }
 
 
@@ -691,9 +724,10 @@ background-color: var(--bg-ocean-blue);}
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: underline;
 }
 
-.setup-card .card-link a :hover {text-decoration: underline;}
+.setup-card .card-link a :hover {color: var(--text-black)}
 
 .setup-card .card-link a ion-icon {
   margin-inline-start: 10px;
@@ -1090,6 +1124,39 @@ background-color: var(--bg-ocean-blue);}
   }
 
 
+
+   /**
+  * GO GREEN
+  **/
+  
+
+
+  .go-green .container {
+    padding:  0 30px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 50px;
+    margin-block: auto;
+    width: fit-content;
+  } 
+
+  .go-green .card-top .card-icon {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  .go-green .card-top {
+    text-align: left;
+  }
+
+  .go-green p {
+    position: relative;
+    top: 50%;
+  }
+
+
   /**
   * SERVICES
   **/
@@ -1277,8 +1344,24 @@ background-color: var(--bg-ocean-blue);}
 
 .desti-list {
   grid-template-columns: repeat(4, 1fr);
-  gap: 50px;
+  gap: 15px;
   }
+
+  .h4 .card-title{
+    text-align: center;
+    font-size: var(--fontSize-4);
+  }
+
+
+
+   /**
+  * GO GREEN
+  **/
+  
+
+
+
+
 
 
 
@@ -1537,6 +1620,39 @@ background-color: var(--bg-ocean-blue);}
   .service-card:nth-child(3) {margin-block-start: 80px;}
 
 
+
+
+
+  /**
+  * GO GREEN
+  **/
+  
+
+
+  .go-green .container {
+    padding:  0 30px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 50px;
+    margin-block: auto;
+    width: fit-content;
+  } 
+
+  .go-green .card-top .card-icon {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  .go-green .card-top {
+    text-align: left;
+  }
+
+  .go-green p {
+    position: relative;
+    top: 50%;
+  }
 
 
   /**
