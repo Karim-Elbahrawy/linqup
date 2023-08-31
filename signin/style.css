@@ -393,3 +393,64 @@ main.sign-up-mode .carousel {
     padding: 1rem 2rem 1.5rem;
   }
 }
+
+/*************
+*  Preload  *
+*************/
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  place-content: center;
+  transition: 250ms ease;
+}
+
+.preloader.remove {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preloader .img{
+  animation: bounce 800ms ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+  from {transform: translateY(-10px);}
+  to {transform: translateY(0);}
+}
+
+
+.preloader-inner {
+  position: relative;
+}
+
+.preloader-inner::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 10px;
+  background-color: hsla(0, 0%, 0%, 0.2);
+  filter: blur(4px);
+  z-index: -1;
+  animation: dropShadow 800ms ease-in-out infinite alternate;
+  -webkit-animation: dropShadow 800ms ease-in-out infinite alternate;
+}
+
+@keyframes dropShadow {
+  0% { width: 40%;}
+  100% { width: 80%;}
+}
+.preloader .img {
+    width: 80px;
+    height: auto;
+}

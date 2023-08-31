@@ -9,6 +9,13 @@
         <link rel="icon" href="./img/favicon.png">
     </head>
     <body>
+
+        <div class="preloader" data-preloader>
+            <div class="preloader-inner">
+                <img class="img" src="/assets/images/favicon.png" width="40" height="40" alt="" >
+            </div>
+        </div>
+
         <main>
             <div class="box">
                 <div class="inner-box">
@@ -148,6 +155,7 @@
 
         <!-- Firebase -->
         <script type="module">
+
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
@@ -231,7 +239,7 @@
         const user = auth.currentUser;
         console.log(user);
                 // Redirect to home
-                // window.location.href = '/';
+                window.location.href = '/profile/';
             } catch (error) {
                 // Handle sign-in errors.
                 alert('Invalid email or password');
@@ -240,14 +248,20 @@
 
         // Listen for auth state changes
         auth.onAuthStateChanged((user) => {
+
             if (user) {
                 // User is signed in
-                window.location.href = '/';
+                window.location.href = '/profile/';
                 // ...
             } else {
                 // User is signed out
                 // ...
             }
+
+            // remove preloader
+            const preloader = document.querySelector("[data-preloader]");
+            preloader.classList.add("remove");
+
         });
 
         </script>
