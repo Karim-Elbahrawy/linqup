@@ -27,16 +27,14 @@
 
     <!-- preload images -->
 
-</head><link rel="preload" as="image" href="./assets/images/hero-banner.png">
-</head><link rel="preload" as="image" href="./assets/images/favicon.png">
+</head>
 <body>
     
     <!-- PRELOADER  -->
 
 <div class="preloader" data-preloader>
     <div class="preloader-inner">
-        <img class="img" src="assets/images/favicon.png" width="40" height="40"
-        alt="" >
+        <img class="img" src="assets/images/favicon.png" width="40" height="40" alt="" >
     </div>
 </div>
 
@@ -95,7 +93,8 @@
 
 
         <div class="header-action">
-            <a href="signup-login/" class="btn btn-primary" id="login">Sign In</a>
+            <a href="/form/" id="user"></a>
+            <a href="/signup-login/" class="btn btn-primary" id="login">Sign In</a>
         </div>
 
         </nav>
@@ -856,6 +855,11 @@
         // print user info
         const user = auth.currentUser;
         auth.onAuthStateChanged((user) => {
+
+            // remove preloader
+            const preloader = document.querySelector("[data-preloader]");
+            preloader.classList.add("remove");
+
             if (user) {
                 // User is signed in
                 console.log(user);
@@ -863,6 +867,14 @@
                 document.getElementById("login").innerHTML = "Logout";
                 // Change button link
                 document.getElementById("login").href = "/logout/";
+
+                // View user name
+                if (user.displayName) {
+                    var profile = user.displayName;
+                } else {
+                    var profile = user.email.split("@")[0];
+                }
+                document.getElementById("user").innerHTML = profile;
             } else {
                 // User is signed out
                 // ...
