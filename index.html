@@ -95,7 +95,7 @@
 
 
         <div class="header-action">
-            <a href="signup-login/" class="btn btn-primary">Sign In</a>
+            <a href="signup-login/" class="btn btn-primary" id="login">Sign In</a>
         </div>
 
         </nav>
@@ -832,7 +832,7 @@
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
-        import { getAuth } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+        import { getAuth, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -855,9 +855,19 @@
 
         // print user info
         const user = auth.currentUser;
-        if (user != null) {
-            console.log(user);
-        }
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                // User is signed in
+                console.log(user);
+                // Change button text
+                document.getElementById("login").innerHTML = "Logout";
+                // Change button link
+                document.getElementById("login").href = "/logout/";
+            } else {
+                // User is signed out
+                // ...
+            }
+        });
 
         </script>
 </body>
