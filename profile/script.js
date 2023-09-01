@@ -91,12 +91,17 @@ auth.onAuthStateChanged((user) => {
         const behance = document.querySelector('#behance');
         const veseeta = document.querySelector('#veseeta');
         const calendly = document.querySelector('#calendly');
+        const whatsapp = document.querySelector("#whatsapp");
+        const telegram = document.querySelector("#telegram");
+        const youtube = document.querySelector("#youtube");
+        const telda = document.querySelector("#telda");
+        const messenger = document.querySelector("#messenger");
 
         name.value = user.displayName;
 
         get(userRef).then((snapshot) => {
             if (snapshot.exists()) {
-                // name.value = snapshot.val().name;
+                name.value = snapshot.val().name;
                 bio.value = snapshot.val().bio;
                 email.value = snapshot.val().email;
                 phone.value = snapshot.val().phone;
@@ -112,6 +117,10 @@ auth.onAuthStateChanged((user) => {
                 behance.value = snapshot.val().behance;
                 veseeta.value = snapshot.val().veseeta;
                 calendly.value = snapshot.val().calendly;
+                whatsapp.value = snapshot.val().whatsapp;
+                telegram.value = snapshot.val().telegram;
+                youtube.value = snapshot.val().youtube;
+                telda.value = snapshot.val().telda;
                 fileLabel.value = snapshot.val().fileLabel;
             } else {
                 console.log("No data available");
@@ -131,7 +140,7 @@ auth.onAuthStateChanged((user) => {
             });
 
             set(userRef, {
-                // name: name.value,
+                name: name.value,
                 bio: bio.value,
                 email: email.value,
                 phone: phone.value,
@@ -147,8 +156,17 @@ auth.onAuthStateChanged((user) => {
                 behance: behance.value,
                 veseeta: veseeta.value,
                 calendly: calendly.value,
+                whatsapp: whatsapp.value,
+                telegram: telegram.value,
+                youtube: youtube.value,
+                telda: telda.value,
                 fileLabel: fileLabel.value,
-            });
+            }).then(() => {
+                    alert("Saved successfully!");
+                }).catch((error) => {
+                    console.error(error);
+                    alert("Error! Try again later.");
+                });
 
             // Upload image and files
             const image = document.querySelector('#inputTag').files[0];

@@ -77,14 +77,13 @@ const telegram = document.querySelector(".telegram");
 const youtube = document.querySelector(".youtube");
 const telda = document.querySelector(".telda");
 const messenger = document.querySelector(".messenger");
-const fileLabel = document.querySelector(".fileLabel");
-
-name.innerHTML = "Hello";
+const fileLabel = document.querySelector(".cv");
 
 // Get user data from database
 get(userRef).then((snapshot) => {
     if (snapshot.exists()) {
         const data = snapshot.val();
+        if (data.name) { name.innerHTML = data.name; } else { name.remove(); }
         if (data.bio) { bio.innerHTML = data.bio; } else { bio.remove(); }
         if (data.email) { email.href = "mailto:" + data.email; } else { email.remove(); }
         if (data.phone) { phone.href = "tel:" + data.phone; } else { phone.remove(); }
@@ -105,9 +104,13 @@ get(userRef).then((snapshot) => {
         if (data.youtube) { youtube.href = data.youtube; } else { youtube.remove(); }
         if (data.telda) { telda.href = data.telda; } else { telda.remove(); }
         if (data.messenger) { messenger.href = data.messenger; } else { messenger.remove(); }
+        if (data.fileLabel) {
+            fileLabel.querySelector("p").innerHTML = data.fileLabel;
+        } else { fileLabel.remove(); }
 
     } else {
-        console.log("No data available");
+        alert("No data available");
+        window.location.href = "/";
     }
 }).catch((error) => {
         console.error(error);
