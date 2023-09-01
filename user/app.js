@@ -44,7 +44,7 @@ const analytics = getAnalytics(app);
 
 // Get uid from url
 const url = window.location.href;
-const uid = url.split("/").pop().substring(1);
+const uid = url.split("?").pop();
 
 // Initialize Firebase Storage
 const storage = getStorage();
