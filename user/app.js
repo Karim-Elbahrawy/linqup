@@ -23,7 +23,7 @@ function copyText(e) {
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
-import { getStorage, ref, getDownloadURL, } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js";
+import { getStorage, ref, getDownloadURL, listAll } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js";
 import { getDatabase, ref as dbRef, get } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
 
 // Your web app's Firebase configuration
@@ -106,6 +106,16 @@ get(userRef).then((snapshot) => {
         if (data.messenger) { messenger.href = data.messenger; } else { messenger.remove(); }
         if (data.fileLabel) {
             fileLabel.querySelector("p").innerHTML = data.fileLabel;
+            const filesRef = ref(storage, "users/" + uid + "/files");
+            fileLabel.addEventListener("click", () => {
+                listAll(filesRef).then((res) => {
+                    res.items.forEach((itemRef) => {
+                        getDownloadURL(itemRef).then((url) => {
+                            window.open(url, "_blank");
+                        });
+                    });
+                });
+            });
         } else { fileLabel.remove(); }
 
     } else {
