@@ -27,16 +27,14 @@
 
     <!-- preload images -->
 
-</head><link rel="preload" as="image" href="./assets/images/hero-banner.png">
-</head><link rel="preload" as="image" href="./assets/images/favicon.png">
+</head>
 <body>
     
     <!-- PRELOADER  -->
 
 <div class="preloader" data-preloader>
     <div class="preloader-inner">
-        <img class="img" src="assets/images/favicon.png" width="40" height="40"
-        alt="" >
+        <img class="img" src="/assets/images/favicon.png" width="40" height="40" alt="" >
     </div>
 </div>
 
@@ -95,7 +93,8 @@
 
 
         <div class="header-action">
-            <a href="./signup-login/index.html" class="btn btn-primary">Sign In</a>
+            <a href="/profile/" id="user"></a>
+            <a href="/signin/" class="btn btn-primary" id="login">Sign In</a>
         </div>
 
         </nav>
@@ -483,7 +482,7 @@
                                     Choose information you'd like to share with others when they scan your card
                                 </p>
                                 <p class="card-link">
-                                    <a href="www.linqupnow.com/signin">
+                                    <a href="/signin/">
                                         <span>Create account </span><ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
                                     </a>
                                 </p>
@@ -823,7 +822,7 @@
 
 
     <!-- custom js link -->
-    <script src="assets/js/script.js"></script>
+    <script type="module" src="assets/js/script.js"></script>
 
     <!-- ioniocon link -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

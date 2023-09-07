@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign in</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="./img/favicon.png">
+    </head>
+    <body>
+
+        <div class="preloader" data-preloader>
+            <div class="preloader-inner">
+                <img class="img" src="/assets/images/favicon.png" width="40" height="40" alt="" >
+            </div>
+        </div>
+
+        <main>
+            <div class="box">
+                <div class="inner-box">
+                    <div class="forms-wrap">
+                        <form action="index.html" autocomplete="off" class="sign-in-form">
+                            <div class="logo">
+                                <img src="./img/favicon.png" alt="linq up" />
+                                <h4>LINQ UP</h4>
+                            </div>
+
+                            <div class="heading">
+                                <h2>Welcome Back</h2>
+                                <h6>Not registred yet?</h6>
+                                <a href="#" class="toggle">Sign up</a>
+                            </div>
+
+                            <div class="actual-form">
+                                <div class="input-wrap">
+                                    <input
+                                        type="email"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                    />
+                                    <label>Email</label>
+                                </div>
+
+                                <div class="input-wrap">
+                                    <input
+                                        type="password"
+                                        minlength="4"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                    />
+                                    <label>Password</label>
+                                </div>
+
+                                <input type="submit" value="Sign In" class="sign-btn" />
+
+                                <p class="text">
+                                    Forgotten your password or you login datails?
+                                    <a href="https://wa.me/+201004805047">Get help</a> signing in
+                                </p>
+                            </div>
+                        </form>
+
+                        <form action="index.html" autocomplete="off" class="sign-up-form">
+                            <div class="logo">
+                                <img src="./img/favicon.png" alt="linq up" />
+                                <h4>LINQUP</h4>
+                            </div>
+
+                            <div class="heading">
+                                <h2>Get Started</h2>
+                                <h6>Already have an account?</h6>
+                                <a href="#" class="toggle">Sign in</a>
+                            </div>
+
+                            <div class="actual-form">
+                                <div class="input-wrap">
+                                    <input
+                                        type="email"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                    />
+                                    <label>Email</label>
+                                </div>
+
+                                <div class="input-wrap">
+                                    <input
+                                        type="password"
+                                        minlength="4"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                    />
+                                    <label>Password</label>
+                                </div>
+
+                                <div class="input-wrap">
+                                    <input
+                                        type="number"
+                                        minlength="4"
+                                        maxlength="4"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        id="purchaseCode"
+                                        required
+                                    />
+                                    <label>Purchase Code</label>
+                                </div>
+
+
+                                <input type="submit" value="Sign Up" class="sign-btn" />
+
+                                <p class="text">
+                                    By signing up, I agree to the
+                                    <a href="#">Terms of Services</a> <br> 
+                                    <a href="https://wa.me/+201004805047">Support</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="carousel">
+                        <div class="images-wrapper">
+                            <img src="./img/image1.png" class="image img-1 show" alt="" />
+                            <img src="./img/image2.png" class="image img-2" alt="" />
+                            <img src="./img/image3.png" class="image img-3" alt="" />
+                        </div>
+
+                        <div class="text-slider">
+                            <div class="text-wrap">
+                                <div class="text-group">
+                                    <h2>Replace thousands of cards with LINQUP</h2>
+                                    <h2>Powered By NFC</h2>
+                                    <h2>Easy To Share Your contact</h2>
+                                </div>
+                            </div>
+
+                            <div class="bullets">
+                                <span class="active" data-value="1"></span>
+                                <span data-value="2"></span>
+                                <span data-value="3"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Javascript file -->
+
+        <script src="app.js"></script>
+
+        <!-- Firebase -->
+        <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDJwVzw1VhKE0Ui8mxd7S3JsawrRgXAZhQ",
+            authDomain: "linqup-web.firebaseapp.com",
+            projectId: "linqup-web",
+            storageBucket: "linqup-web.appspot.com",
+            messagingSenderId: "52682549828",
+            appId: "1:52682549828:web:3ed79cb0af3296cc436a11",
+            measurementId: "G-1RJTNKZG69"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // Import Firebase Auth SDK
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+
+        // Get a reference to the Firebase Auth service
+        const auth = getAuth(app);
+
+        // Set auth persistence
+        setPersistence(auth, browserLocalPersistence)
+            .then(() => {
+                console.log('Firebase Auth persistence set');
+            })
+            .catch((error) => {
+                console.error('Failed to set Firebase Auth persistence', error);
+            });
+
+        // Sign Up Form Submission
+        document.querySelector('.sign-up-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Validate purchase code
+            const purchaseCodeField = document.querySelector('#purchaseCode');
+            if (purchaseCodeField.value < 1001 || purchaseCodeField.value > 1100) {
+                alert("Invalid Purchase Code.");
+                return;
+            }
+
+            const emailField = document.querySelector('.sign-up-form .input-field[type="email"]');
+            const passwordField = document.querySelector('.sign-up-form .input-field[type="password"]');
+
+            try {
+                // Create a new user
+                await createUserWithEmailAndPassword(auth, emailField.value, passwordField.value);
+            } catch (error) {
+                // Handle sign-up errors.
+                switch (error.code) {
+                    case 'auth/email-already-in-use':
+                        alert('Email already in use');
+                        break;
+                    case 'auth/invalid-email':
+                        alert('Invalid email address');
+                        break;
+                    case 'auth/weak-password':
+                        alert('Password is too weak');
+                        break;
+                    default:
+                        alert(error.message);
+                        break;
+                }
+            }
+        });
+
+        // Sign In Form Submission
+        document.querySelector('.sign-in-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const emailField = document.querySelector('.sign-in-form .input-field[type="email"]');
+            const passwordField = document.querySelector('.sign-in-form .input-field[type="password"]');
+
+            try {
+                await signInWithEmailAndPassword(auth, emailField.value, passwordField.value);
+        const user = auth.currentUser;
+        console.log(user);
+                // Redirect to home
+                window.location.href = '/profile/';
+            } catch (error) {
+                // Handle sign-in errors.
+                alert('Invalid email or password');
+            }
+        });
+
+        // Listen for auth state changes
+        auth.onAuthStateChanged((user) => {
+
+            if (user) {
+                // User is signed in
+                window.location.href = '/profile/';
+                // ...
+            } else {
+                // User is signed out
+                // ...
+            }
+
+            // remove preloader
+            const preloader = document.querySelector("[data-preloader]");
+            preloader.classList.add("remove");
+
+        });
+
+        </script>
+
+    </body>
+</html>

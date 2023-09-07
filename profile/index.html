@@ -20,10 +20,17 @@
 
 <body>
 
+<div class="preloader" data-preloader>
+    <div class="preloader-inner">
+        <img class="img" src="/assets/images/favicon.png" width="40" height="40" alt="" >
+    </div>
+</div>
+
+
     <div class="container">
         <header>Information</header>
 
-        <form action="#">
+        <form action="#" class="user-data">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Personal Details</span>
@@ -31,14 +38,14 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>User Name</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" placeholder="Enter your name" id="name" required>
                         </div>
 
                         
                         
                         <div class="input-field">
                             <label>Bio Text</label>
-                            <input type="text" placeholder="BIO" required>
+                            <input type="text" placeholder="BIO" id="bio">
                         </div>
 
                             
@@ -50,9 +57,9 @@
                         
                         <div class="input-field1" class="img-input">
                             <label for="inputTag">
-                                <div><img src="/form/image.avif" alt="img"></div> 
+                                <div><img id="profileImg" src="/profile/image.avif" alt="img"></div> 
                                 <span> Select Image</span> 
-                                <input id="inputTag" type="file"/>
+                                <input id="inputTag" type="file" accept="image/*"/>
                             </label>
                         </div>
 
@@ -73,101 +80,99 @@
                         
                         <div class="input-field">
                             <label>Phone Number</label>
-                            <input type="number" placeholder="Enter Phone number" required>
+                            <input type="tel" placeholder="Enter Phone number" id="phone">
                         </div>
 
                         <div class="input-field">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your email" required>
+                            <input type="text" placeholder="Enter your email" id="email">
                         </div>
                         
                         <div class="input-field">
-                            <label>Work Email</label>
-                            <input type="text" placeholder="Enter your work email" required>
-                        </div>
-
-
-                        <div class="input-field">
                             <label>Whatsapp</label>
-                            <input type="tel" placeholder="Enter Whatsapp number" >
+                            <input type="tel" placeholder="Enter Whatsapp number" id="whatsapp">
                         </div>
 
                         <div class="input-field">
                             <label>Telegram</label>
-                            <input type="tel" placeholder="Enter your Telegram link" >
+                            <input type="tel" placeholder="Enter your Telegram link" id="telegram">
                         </div>
 
                         <div class="input-field">
                             <label>Youtube</label>
-                            <input type="url" placeholder="Enter your Youtube link" >
+                            <input type="url" placeholder="Enter your Youtube link" id="youtube">
                         </div>
 
                         <div class="input-field">
                             <label>Twitter</label>
-                            <input type="url" placeholder="Enter your Twitter link" >
+                            <input type="url" placeholder="Enter your Twitter link" id="twitter">
                         </div>
 
                         <div class="input-field">
                             <label>Facebook</label>
-                            <input type="url" placeholder="Enter your Facebook link" >
+                            <input type="url" placeholder="Enter your Facebook link" id="facebook">
                         </div>
 
                         <div class="input-field">
                             <label>Instagram</label>
-                            <input type="url" placeholder="Enter your Instagram link" >
+                            <input type="url" placeholder="Enter your Instagram link" id="instagram">
                         </div>
 
                         <div class="input-field">
                             <label>LinkedIn</label>
-                            <input type="url" placeholder="Enter your LinkedIn link" >
+                            <input type="url" placeholder="Enter your LinkedIn link" id="linkedin">
                         </div>
 
                         <div class="input-field">
                             <label>Tiktok</label>
-                            <input type="url" placeholder="Enter your Tiktok link" >
+                            <input type="url" placeholder="Enter your Tiktok link" id="tiktok">
                         </div>
 
                         <div class="input-field">
                             <label>SnapChat</label>
-                            <input type="url" placeholder="Enter your SnapChat link" >
+                            <input type="url" placeholder="Enter your SnapChat link" id="snapchat">
                         </div>
 
                         <div class="input-field">
                             <label>Threads</label>
-                            <input type="url" placeholder="Enter your Threads link" >
+                            <input type="url" placeholder="Enter your Threads link" id="threads">
                         </div>
 
                         <div class="input-field">
                             <label>Instapay</label>
-                            <input type="url" placeholder="Enter your Instapay link" >
+                            <input type="url" placeholder="Enter your Instapay link" id="instapay">
                         </div>
 
                         <div class="input-field">
-                            <label>Web Page</label>
-                            <input type="url" placeholder="Enter your Web Page link" >
+                            <label>Website</label>
+                            <input type="url" placeholder="Enter your Web Page link" id="website">
                         </div>
 
                         <div class="input-field">
                             <label>Behance</label>
-                            <input type="url" placeholder="Enter your Behance link" >
+                           <input type="url" placeholder="Enter your Behance link" id="behance">
                         </div>
 
                     
 
                     <div class="input-field">
                         <label>Veseeta</label>
-                        <input type="url" placeholder="Enter your Veseeta link" >
+                       <input type="url" placeholder="Enter your Veseeta link" id="veseeta">
                     </div>
-                    
+
+                    <div class="input-field">
+                        <label>Telda</label>
+                       <input type="url" placeholder="Enter your Telda link" id="telda">
+                    </div>
                     
                     <div class="input-field">
                         <label>Calendly</label>
-                        <input type="url" placeholder="Enter your Calendly link" >
+                       <input type="url" placeholder="Enter your Calendly link" id="calendly">
                     </div>
 
                     <div class="input-field">
                         <label>Name on file</label>
-                        <input type="text" placeholder="Add file file name" required>
+                        <input type="text" id="file-label" placeholder="Add file name">
                     </div>
 
                         
@@ -208,6 +213,6 @@
         </form>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>
